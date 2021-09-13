@@ -1,32 +1,23 @@
 <html>
+
+<head>
+   <link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet">
+   <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
+   <script src="https://wow.zamimg.com/widgets/power.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
 <script>
-function openTab(tabName) {
-   var i;
-   var x = document.getElementsByClassName("tab");
-   for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
+   function openTab(tabName) {
+      var i;
+      var x = document.getElementsByClassName("tab");
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+      document.getElementById(tabName).style.display = "block";
    }
-   document.getElementById(tabName).style.display = "block";
-}
 </script>
-<script>var whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};</script><script src="https://wow.zamimg.com/widgets/power.js"></script>
-<style>
-html { background-color: #000; };
-.divTable{ display: table; float: left; margin: 10px 10px; }
-.divTableRow { display: table-row; background-color: #000}
-.divTableRow:hover { background-color: #222; }
-.divTableHeading { background-color: #EEE; display: table-header-group; }
-.divTableCell, .divTableHead { border: 1px solid #999999; display: table-cell; padding: 3px 10px; }
-.divPlayer { border: 1px solid #999999; display: table-cell; width: 700px; padding: 3px 10px; text-align: left; vertical-align: middle; word-wrap: normal; color: #ffffff; }
-.divClass { border: 1px solid #999999; display: table-cell; padding: 3px 10px; text-align: center; vertical-align: middle; color: #ffffff; }
-.divDKP { border: 1px solid #999999; display: table-cell; width: 200px%; padding: 3px 10px; text-align: center; vertical-align: middle; color: #ffffff; }
-.divPlayerHeader { border: 1px solid #999999; display: table-cell; font-weight: bold; width: 50%; padding: 3px 10px; text-align: left; background-color: #bbb; }
-.divClassHeader { border: 1px solid #999999; display: table-cell; font-weight: bold; width: 150px; padding: 3px 10px; text-align: center; background-color: #bbb; }
-.divDKPHeader { border: 1px solid #999999; display: table-cell; font-weight: bold; width: 30%; padding: 3px 10px; text-align: center; background-color: #bbb; }
-.divTableHeading { background-color: #EEE; display: table-header-group; font-weight: bold; }
-.divTableFoot { background-color: #EEE; display: table-footer-group; font-weight: bold; }
-.divTableBody { display: table-row-group; }
-</style>
+<script>var whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: true };</script>
+
 
 <br /><br />
 <div>
@@ -35,188 +26,118 @@ html { background-color: #000; };
    <button onclick="openTab('LootHistory')">Loot History</button>
 </div>
 <br /><br />
-<div id="DKP" class="tab"><div class="divTable" style="width: 30%;border: 1px solid #000;">
-   <div class="divTableBody">
-      <div class="divTableRow">
-         <div class="divPlayerHeader">Player</div>
-         <div class="divClassHeader">Class</div>
-         <div class="divDKPHeader">DKP</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Aszræl</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_rogue.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Blackmerlin</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_mage.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Chelios</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_mage.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Ciira</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_hunter.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Designflawz</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_rogue.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Droodix</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_druid.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Elva</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_priest.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Furiorne</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_druid.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Garixa</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warlock.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Gnomorah</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warrior.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Healna</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_druid.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Holydon</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_paladin.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Keyan</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_mage.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Krissi</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warlock.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Krocket</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_shaman.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Loriell</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warlock.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Luremistress</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_mage.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Lydraeth</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warrior.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Nejt</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_shaman.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Noemilein</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_hunter.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Phorus</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warrior.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Prime</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warrior.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Truckertony</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_druid.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Velvet</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_priest.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Wichtel</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warlock.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Wico</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_paladin.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Xaia</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warrior.jpg" height="24" width="24" /></div>
-         <div class="divDKP">100</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer">Yaggou</div>
-         <div class="divClass" style="width: 150px;"><img src="https://wow.zamimg.com/images/wow/icons/large/classicon_hunter.jpg" height="24" width="24" /></div>
-         <div class="divDKP">30</div>
-      </div>
-   </div>
+<div id="DKP" class="tab">
+   <div id="dkp_table"></div>
+   <!-- <div><object id="dkp_list" data="dkp.txt"></object></div> -->
+
+
 </div>
-</div>
-<div id="DKPHistory" class="tab" style="display:none;"><div class="divTable" style="width: 95%;border: 1px solid #000;">
-   <div class="divTableBody">
-      <div class="divTableRow">
-         <div class="divPlayerHeader">Players</div>
-         <div class="divClassHeader" style="width: 4%;">DKP</div>
-         <div class="divDKPHeader">Date/Reason</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer" style="font-size: 0.7em; width: 71%;">Nejt, Noemilein, Lydraeth, Krocket, Loriell, Krissi, Phorus, Truckertony, Wico, Prime, Wichtel, Velvet, Furiorne, Keyan, Healna, Yaggou, Aszræl, Luremistress, Chelios, Holydon, Blackmerlin, Droodix, Gnomorah, Ciira, Garixa, Elva, Xaia, </div>
-         <div class="divClass" style="width: 4%;">100</div>
-         <div class="divDKP" style="width: 25%; font-size: 0.7em;">Other - First DKP<br />(09/01/21 22:25:23) </div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer" style="font-size: 0.7em; width: 71%;">Designflawz, </div>
-         <div class="divClass" style="width: 4%;">100</div>
-         <div class="divDKP" style="width: 25%; font-size: 0.7em;">Other - Tank<br />(09/01/21 22:20:39) </div>
-      </div>
-   </div>
-</div>
-</div><div id="LootHistory" class="tab" style="display:none;"><div class="divTable" style="width: 50%;border: 1px solid #000;">
-   <div class="divTableBody">
-      <div class="divTableRow">
-         <div class="divPlayerHeader">Loot</div>
-         <div class="divClassHeader">Player</div>
-         <div class="divDKPHeader">From</div>
-      </div>
-      <div class="divTableRow">
-         <div class="divPlayer" style="width: 40%;"><a href="https://tbc.wowhead.com/item=23077" data-wowhead="item=23077"></a> (-70 DKP)</div>
-         <div class="divClass" style="width: 20%;">Yaggou</div>
-         <div class="divDKP" style="width: 40%; font-size: 0.7em;">Molten Core: Lucifron<br />(09/01/21 22:27:37) </div>
-      </div>
-   </div>
-</div>
-</div>
+<script>
+   // let dkp_list = document.querySelector('#dkp_list');
+   // console.log(dkp_list);
+
+   jQuery.get('/dkp.txt', function (data) {
+      alert(data);
+   });
+
+   //create Tabulator on DOM element with id "example-table"
+   var table = new Tabulator("#dkp_table", {
+      layout: "fitColumns", //fit columns to width of table (optional)
+      columns: [ //Define Table Columns
+         // player,class,DKP,previousDKP,lifetimeGained,lifetimeSpent
+         { title: "Player", field: "player" },
+         { title: "class", field: "class" },
+         { title: "DKP", field: "DKP" },
+         { title: "previousDKP", field: "previousDKP" },
+         { title: "lifetimeGained", field: "lifetimeGained" },
+         { title: "lifetimeSpent", field: "lifetimeSpent" },
+      ],
+      rowClick: function (e, row) { //trigger an alert message when the row is clicked
+         alert("Row " + row.getData().id + " Clicked!!!!");
+      },
+   });
+   function CSVToArray(strData, strDelimiter) {
+      // Check to see if the delimiter is defined. If not,
+      // then default to comma.
+      strDelimiter = (strDelimiter || ",");
+
+      // Create a regular expression to parse the CSV values.
+      var objPattern = new RegExp(
+         (
+            // Delimiters.
+            "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+
+            // Quoted fields.
+            "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+
+            // Standard fields.
+            "([^\"\\" + strDelimiter + "\\r\\n]*))"
+         ),
+         "gi"
+      );
+
+
+      // Create an array to hold our data. Give the array
+      // a default empty first row.
+      var arrData = [[]];
+
+      // Create an array to hold our individual pattern
+      // matching groups.
+      var arrMatches = null;
+
+
+      // Keep looping over the regular expression matches
+      // until we can no longer find a match.
+      while (arrMatches = objPattern.exec(strData)) {
+
+         // Get the delimiter that was found.
+         var strMatchedDelimiter = arrMatches[1];
+
+         // Check to see if the given delimiter has a length
+         // (is not the start of string) and if it matches
+         // field delimiter. If id does not, then we know
+         // that this delimiter is a row delimiter.
+         if (
+            strMatchedDelimiter.length &&
+            strMatchedDelimiter !== strDelimiter
+         ) {
+
+            // Since we have reached a new row of data,
+            // add an empty row to our data array.
+            arrData.push([]);
+
+         }
+
+         var strMatchedValue;
+
+         // Now that we have our delimiter out of the way,
+         // let's check to see which kind of value we
+         // captured (quoted or unquoted).
+         if (arrMatches[2]) {
+
+            // We found a quoted value. When we capture
+            // this value, unescape any double quotes.
+            strMatchedValue = arrMatches[2].replace(
+               new RegExp("\"\"", "g"),
+               "\""
+            );
+
+         } else {
+
+            // We found a non-quoted value.
+            strMatchedValue = arrMatches[3];
+
+         }
+
+
+         // Now that we have our value string, let's add
+         // it to the data array.
+         arrData[arrData.length - 1].push(strMatchedValue);
+      }
+
+      // Return the parsed data.
+      return (arrData);
+   }
+</script>
+
 </html>
