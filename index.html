@@ -1,10 +1,17 @@
 <html>
 
 <head>
+   <title>Xariflaw DKP Sheet</title>
+
+   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
    <link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet">
    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
+   <script>const whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: true };</script>
    <script src="https://wow.zamimg.com/widgets/power.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
 </head>
 <script>
    function openTab(tabName) {
@@ -16,9 +23,28 @@
       document.getElementById(tabName).style.display = "block";
    }
 </script>
-<script>var whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: true };</script>
-
-
+<h1>Xariflaw DKP</h1>
+<h4>Lootsytem (105 DKP):<br>
+   • 105 DKP Maximum. Jede ID können +2 DKP gesammelt werden.<br>
+   (Wir behalten uns vor das Maximum im Laufe der Phasen oder zum Beginn neuer anzupassen, falls die Gegebenheiten dies
+   erfordern)<br>
+   • Jeder Spieler startet jeden Raidabend mit 100 + X DKP<br>
+   • Nach jedem Raidabend bekommen alle Teilnehmer die kein Item über DKP gelootet haben +1 DKP.<br>
+   • Spieler die auf "Bench" sitzen, aber bis kurz vor Pull im Raid erreichbar sind, erhalten ebenfalls +1 DKP.<br>
+   • Es gilt generell für Items auf die DKP geboten wird: MAIN > OFFSPEC<br>
+   • Items, für die kein DKP geboten wird, entfallen dieser prio. (Main = Offspec = Pvp)<br>
+   • Bei gilt Waffen zusätzlich: Rangeweapon = Hunter > Melee ; Meleeweapon = Melee > Hunter<br>
+   • Lootverteilung: Wir versuchen möglichst gebündelt zu verteilen (je nachdem, wie die Zeitfenster es uns
+   erlauben)<br>
+   • Im Zweifel liegt das letzte Wort bei der Raidleitung!<br>
+   Bieten:<br>
+   • Jeder Spieler hat immer mindestens 10 DKP, auch wenn man schon seine komplette DKP ausgegeben hat.<br>
+   • Mindestgebot auf ein Item ist 20 DKP, außer man hat weniger.<br>
+   Hinweise:<br>
+   • Unentschuldigtes Fernbleibem vom Raid oder andere grobe Verstöße, können eine DKP Strafe mit sich führen.<br>
+   • Items dürfen intern natürlich nicht ohne Absprachen getraded werden.<br>
+   • Da ihr immer mindestens 10 DKP habt, sollte aber nie ein Item für Offspec verrollt werden, dass Mainspec noch
+   gebraucht wird.</h4>
 <br /><br />
 <div>
    <button onclick="openTab('DKP')">DKP Table</button>
@@ -32,11 +58,12 @@
 <div id="DKPHistory" class="tab">
    <div id="DKPHistory_table"></div>
 </div>
-<div id="DKP" class="tab">
+<div id="LootHistory" class="tab">
    <div id="LootHistory_table"></div>
 </div>
 <script>
    //var csv is the CSV file with headers
+   openTab('DKP');
    function csvJSON(csv) {
 
       var lines = csv.split("\n");
@@ -52,7 +79,7 @@
       for (var i = 1; i < lines.length; i++) {
 
          var obj = {};
-         var currentline = lines[i].split(",");
+         var currentline = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
 
          for (var j = 0; j < headers.length; j++) {
             obj[headers[j]] = currentline[j];
@@ -68,22 +95,60 @@
 
    jQuery.get('https://knoxz.github.io/dkp.csv', function (data) {
       let dkp_data = csvJSON(data);
+      console.log("DKP");
       console.log(dkp_data);
       dkp_table.setData(dkp_data);
    });
-   jQuery.get('https://knoxz.github.io/dkp.txt', function (data) {
+   jQuery.get('https://knoxz.github.io/dkp_history.csv', function (data) {
       let dkp_data = csvJSON(data);
+      console.log("DKP_History");
       console.log(dkp_data);
-      dkp_table.setData(dkp_data);
+      DKPHistory_table.setData(dkp_data);
    });
-   jQuery.get('https://knoxz.github.io/dkp.txt', function (data) {
+   jQuery.get('https://knoxz.github.io/loot_history.csv', function (data) {
       let dkp_data = csvJSON(data);
+      console.log("Loot_History");
       console.log(dkp_data);
-      dkp_table.setData(dkp_data);
+      LootHistory_table.setData(dkp_data);
    });
 
+   function date_formatter(cell, formatterParams, onRendered) {
+      //cell - the cell component
+      //formatterParams - parameters set for the column
+      //onRendered - function to call when the formatter has been rendered
+      var date = new Date(cell.getValue() * 1000);
+      // console.log(date);
+      return date.toLocaleString('de-DE'); //return the contents of the cell;
+   }
+
+   function item_links(cell, formatterParams, onRendered) {
+      //cell - the cell component
+      //formatterParams - parameters set for the column
+      //onRendered - function to call when the formatter has been rendered
+      let a_node = document.createElement("a");
+      a_node.href = `https://tbc.wowhead.com/item=${cell.getValue().id}`
+      a_node.setAttribute("data-wowhead", `item=${cell.getValue().id}`)
+      a_node.setAttribute("data-wh-rename-link", "true")
+      a_node.setAttribute("data-wh-icon-size", "small")
+      item_id_node = document.createTextNode(`${cell.getValue().name}`);
+      a_node.appendChild(item_id_node);
+
+      return a_node; //return the contents of the cell;
+   }
+
+   //define custom mutator
+   var combine_name_id = function (value, data, type, params, component) {
+      //value - original value of the cell
+      //data - the data for the row
+      //type - the type of mutation occurring  (data|edit)
+      //params - the mutatorParams object from the column definition
+      //component - when the "type" argument is "edit", this contains the cell component for the edited cell, otherwise it is the column component for the column
+
+      return { name: data.itemName, id: value }; //return the new value for the cell data.
+   }
+
+
    var dkp_table = new Tabulator("#dkp_table", {
-      data: dkp_data,
       layout: "fitColumns", //fit columns to width of table (optional)
       columns: [ //Define Table Columns
          // player,class,DKP,previousDKP,lifetimeGained,lifetimeSpent
@@ -100,9 +165,9 @@
       layout: "fitColumns", //fit columns to width of table (optional)
       columns: [ //Define Table Columns
          // player,class,DKP,previousDKP,lifetimeGained,lifetimeSpent
-         { title: "Player", field: "player" },
+         { title: "Player", field: "player", formatter: "textarea" },
          { title: "DKP", field: "DKP" },
-         { title: "date", field: "date" },
+         { title: "date", field: "date", formatter: date_formatter },
          { title: "reason", field: "reason" }
       ]
    });
@@ -112,17 +177,14 @@
       columns: [ //Define Table Columns
          // player,class,DKP,previousDKP,lifetimeGained,lifetimeSpent
          { title: "Player", field: "player" },
-         { title: "itemName", field: "itemName" },
-         { title: "itemNumber", field: "itemNumber" },
+         // { title: "itemName", field: "itemName" },
+         { title: "itemNumber", field: "itemNumber", mutator: combine_name_id, formatter: item_links },
          { title: "zone", field: "zone" },
          { title: "boss", field: "boss" },
-         { title: "date", field: "date" },
+         { title: "date", field: "date", formatter: date_formatter },
          { title: "cost", field: "cost" },
       ]
    });
-
-
-
 </script>
 
 </html>
