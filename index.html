@@ -22,6 +22,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.9.3/css/bootstrap/tabulator_bootstrap4.min.css"
     integrity="sha512-pXZ8FsuOBAyDmJ3OWob4V2UgZWQ8zs8f99MrNv0sBG8VLzuucajpzJ3BIiVNzTpfIYgzWGUq0QPJ3Y/9Gr4h7Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>var whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: true };</script>
 </head>
 
 <body>
@@ -155,7 +156,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.9.3/js/modules/mutator.min.js"
     integrity="sha512-b3j7bJ9q8EpyWcaesZmB/1vMfQAhvPT5DrF26r15/3gc6zz6+XH2tntqexeO5ltaDbTbX1PGwRmXrc/wy1Dv5w=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>const whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: true };</script>
   <script src="https://wow.zamimg.com/widgets/power.js"></script>
 </body>
 <script>
@@ -216,7 +216,18 @@
     let loot_history_data = csvJSON(data);
     console.log("Loot_History");
     console.log(loot_history_data);
-    LootHistory_table.setData(loot_history_data);
+    LootHistory_table.setData(loot_history_data).then(function () {
+      console.log("THEN");
+      setTimeout(function () {
+        console.log("THEN TIMER");
+        window.$WowheadPower.init();
+      }, 2000);
+    });
+    console.log(LootHistory_table);
+    setTimeout(function () {
+      console.log("THEN 3 SECS");
+      window.$WowheadPower.init();
+    }, 3000);
   });
 
   function class_formatter(cell, formatterParams, onRendered) {
@@ -233,13 +244,14 @@
 
   function item_links(cell, formatterParams, onRendered) {
     let a_node = document.createElement("a");
-    a_node.href = `https://tbc.wowhead.com/item=${cell.getValue().id}`
-    a_node.setAttribute("data-wowhead", `item=${cell.getValue().id}`)
-    a_node.setAttribute("data-wh-rename-link", "true")
-    a_node.setAttribute("data-wh-icon-size", "small")
-    item_id_node = document.createTextNode(`${cell.getValue().name}`);
+    a_node.href = `https://tbc.wowhead.com/item=${cell.getValue().id}`;
+    a_node.setAttribute("data-wowhead", `item=${cell.getValue().id}`);
+    a_node.setAttribute("data-wh-rename-link", "true");
+    a_node.setAttribute("data-wh-icon-size", "small");
+    item_id_node = document.createTextNode(`${cell.getValue().name}`.replaceAll('"', ''));
     a_node.appendChild(item_id_node);
 
+    // <div class="divPlayer" style="width: 40%;"><a href="https://tbc.wowhead.com/item=30450" data-wowhead="item=30450"></a>
     return a_node; //return the contents of the cell;
   }
 
@@ -300,7 +312,7 @@
     },
     columns: [ //Define Table Columns
       // player,class,DKP,previousDKP,lifetimeGained,lifetimeSpent
-      { title: "Player", field: "player" },
+      { title: "Player", field: "player", width: 150 },
       // { title: "itemName", field: "itemName" },
       {
         title: "Item", field: "itemNumber", mutator: combine_name_id, formatter: item_links, sorter: function (a, b, aRow, bRow, column, dir, sorterParams) {
