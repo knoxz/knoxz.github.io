@@ -216,18 +216,7 @@
     let loot_history_data = csvJSON(data);
     console.log("Loot_History");
     console.log(loot_history_data);
-    LootHistory_table.setData(loot_history_data).then(function () {
-      console.log("THEN");
-      setTimeout(function () {
-        console.log("THEN TIMER");
-        window.$WowheadPower.init();
-      }, 2000);
-    });
-    console.log(LootHistory_table);
-    setTimeout(function () {
-      console.log("THEN 3 SECS");
-      window.$WowheadPower.init();
-    }, 3000);
+    LootHistory_table.setData(loot_history_data);
   });
 
   function class_formatter(cell, formatterParams, onRendered) {
@@ -246,8 +235,6 @@
     let a_node = document.createElement("a");
     a_node.href = `https://tbc.wowhead.com/item=${cell.getValue().id}`;
     a_node.setAttribute("data-wowhead", `item=${cell.getValue().id}`);
-    a_node.setAttribute("data-wh-rename-link", "true");
-    a_node.setAttribute("data-wh-icon-size", "small");
     item_id_node = document.createTextNode(`${cell.getValue().name}`.replaceAll('"', ''));
     a_node.appendChild(item_id_node);
 
@@ -301,6 +288,14 @@
 
   var LootHistory_table = new Tabulator("#LootHistory_table", {
     layout: "fitColumns", //fit columns to width of table (optional)
+    tableBuilt: function () {
+      window.$WowheadPower.init();
+      console.log("Built Complete");
+      setTimeout(function () {
+        console.log("THEN TIMER");
+        window.$WowheadPower.init();
+      }, 2000);
+    },
     rowFormatter: function (row) {
       dkp_data.forEach(element => {
         if (element.player == row.getData().player) {
