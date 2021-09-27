@@ -166,6 +166,11 @@
       x[i].style.display = "none";
     }
     document.getElementById(tabName).style.display = "block";
+    if (tabName == 'LootHistory') {
+      setTimeout(function () {
+        window.$WowheadPower.init();
+      }, 100);
+    }
   }
   //var csv is the CSV file with headers
   openTab('DKP');
@@ -288,14 +293,6 @@
 
   var LootHistory_table = new Tabulator("#LootHistory_table", {
     layout: "fitColumns", //fit columns to width of table (optional)
-    tableBuilt: function () {
-      window.$WowheadPower.init();
-      console.log("Built Complete");
-      setTimeout(function () {
-        console.log("THEN TIMER");
-        window.$WowheadPower.init();
-      }, 2000);
-    },
     rowFormatter: function (row) {
       dkp_data.forEach(element => {
         if (element.player == row.getData().player) {
