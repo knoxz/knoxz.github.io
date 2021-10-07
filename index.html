@@ -65,6 +65,14 @@
             <span class="menu-title">Loot History</span>
           </a>
         </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="#" onclick="openTab('Crafter');return false;">
+            <span class="menu-icon">
+              <i class="mdi mdi-gavel"></i>
+            </span>
+            <span class="menu-title">Crafter</span>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- partial -->
@@ -106,6 +114,12 @@
                     <h4 class="card-title">DKP List</h4>
                     <div class="table-responsive">
                       <div class="table-dark" id="LootHistory_table"></div>
+                    </div>
+                  </div>
+                  <div id="Crafter" class="tab">
+                    <h4 class="card-title">Available Crafter</h4>
+                    <div class="table-responsive">
+                      <div class="table-dark" id="Crafter_table"></div>
                     </div>
                   </div>
                 </div>
@@ -166,7 +180,7 @@
       x[i].style.display = "none";
     }
     document.getElementById(tabName).style.display = "block";
-    if (tabName == 'LootHistory') {
+    if (tabName == 'LootHistory' || tabName == 'Crafter') {
       setTimeout(function () {
         window.$WowheadPower.init();
       }, 100);
@@ -240,7 +254,7 @@
     let a_node = document.createElement("a");
     a_node.href = `https://tbc.wowhead.com/item=${cell.getValue().id}`;
     a_node.setAttribute("data-wowhead", `item=${cell.getValue().id}`);
-    item_id_node = document.createTextNode(`${cell.getValue().name}`.replaceAll('"', ''));
+    item_id_node = document.createTextNode(``);
     a_node.appendChild(item_id_node);
 
     // <div class="divPlayer" style="width: 40%;"><a href="https://tbc.wowhead.com/item=30450" data-wowhead="item=30450"></a>
@@ -323,6 +337,39 @@
       { title: "Cost", field: "cost", width: 90 },
     ]
   });
+
+  var tableData = [
+    { id: 1, player: "Designflawz", profession: "Leatherworking", item: { id: "30303" } },
+    { id: 2, player: "Designflawz", profession: "Leatherworking", item: { id: "30301" } },
+  ];
+
+  console.log(tableData);
+  var crafter_table = new Tabulator("#Crafter_table", {
+    data: tableData,
+    layout: "fitColumns", //fit columns to width of table (optional)
+    groupBy: "profession",
+    groupValues: [["Leatherworking", "Blacksmithing", "Tailoring"]],
+    rowFormatter: function (row) {
+      dkp_data.forEach(element => {
+        if (element.player == row.getData().player) {
+          row.getElement().style.color = class_colors[element.class];
+        }
+      })
+      row.getElement().style.color = class_colors[row.getData().class];
+
+    },
+    columns: [ //Define Table Columns
+      // player,class,DKP,previousDKP,lifetimeGained,lifetimeSpent
+      { title: "Player", field: "player", width: 150 },
+      {
+        title: "Item", field: "item", formatter: item_links, sorter: function (a, b, aRow, bRow, column, dir, sorterParams) {
+          return a.id - b.id; //you must return the difference between the two values
+        },
+      },
+      // { title: "Profession", field: "profession" },
+    ]
+  });
+
 </script>
 
 </html>
