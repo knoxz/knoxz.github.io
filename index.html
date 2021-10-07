@@ -341,14 +341,29 @@
   var tableData = [
     { id: 1, player: "Designflawz", profession: "Leatherworking", item: { id: "30303" } },
     { id: 2, player: "Designflawz", profession: "Leatherworking", item: { id: "30301" } },
+    { id: 2, player: "Keyan", profession: "Tailoring", item: { id: "30280" } },
   ];
 
   console.log(tableData);
   var crafter_table = new Tabulator("#Crafter_table", {
     data: tableData,
     layout: "fitColumns", //fit columns to width of table (optional)
-    groupBy: "profession",
+    groupBy: ["profession"],
     groupValues: [["Leatherworking", "Blacksmithing", "Tailoring"]],
+    // groupHeader: [
+    //   function (value, count, data) { //generate header contents for gender groups
+    //     return value + "<span style='color:#d00; margin-left:10px;'>(" + count + " item)</span>";
+    //   },
+    //   function (value, count, data) { //generate header contents for color groups
+    //     class_color = "#0dd"
+    //     dkp_data.forEach(element => {
+    //       if (element.player == value) {
+    //         class_color = class_colors[element.class];
+    //       }
+    //     });
+    //     return "<span style='color:" + class_color + "; margin-left:10px;'>" + value + "</span>";
+    //   },
+    // ],
     rowFormatter: function (row) {
       dkp_data.forEach(element => {
         if (element.player == row.getData().player) {
