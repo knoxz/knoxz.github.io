@@ -1,4 +1,9 @@
 player,itemName,itemNumber,zone,boss,date,cost
+Healna,"Runetotem's Mantle",30111,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1638127937,0
+Ophelius,"Helm of the Vanquished Champion",30242,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1638127863,-104
+Velvet,"Helm of the Vanquished Defender",30243,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1638127800,-103
+Alexiz,"Serpent Spine Longbow",30105,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1638127751,-103
+Yaggou,"Twinblade of the Phoenix",29993,"Tempest Keep",Kael'thas Sunstrider,1638123728,0
 Tjen,"Pattern: Boots of Blasting",30282,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1637791699,0
 Bazookatonyx,"Gloves of the Vanquished Defender",30240,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1637791577,0
 Shampoohoo,"Gloves of the Vanquished Champion",30239,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1637791548,0
@@ -14,7 +19,6 @@ Krocket,"Girdle of Fallen Stars",30030,"Tempest Keep",Kael'thas Sunstrider,16377
 Bazookatonyx,"Cowl of the Grand Engineer",29986,"Tempest Keep",Kael'thas Sunstrider,1637784880,0
 Fluffers,"Pauldrons of the Vanquished Defender",30249,"Tempest Keep",Kael'thas Sunstrider,1637784828,0
 Krissi,"Wand of the Forgotten Star",29982,"Tempest Keep",Kael'thas Sunstrider,1637784699,0
-Alexiz,"Twinblade of the Phoenix",29993,"Tempest Keep",Kael'thas Sunstrider,1637784646,-20
 Bazookatonyx,"Nether Vortex",30183,"Tempest Keep",Kael'thas Sunstrider,1637784565,0
 Elva,"Royal Cloak of the Sunstriders",29992,"Tempest Keep",Kael'thas Sunstrider,1637784502,-104
 Shampoohoo,"Verdant Sphere",32405,"Tempest Keep",Kael'thas Sunstrider,1637784474,-104
@@ -183,6 +187,3 @@ Krocket,"Netherbane",29924,"Tempest Keep",High Astromancer Solarian,1634153195,-
 Healna,"Pauldrons of the Vanquished Defender",30249,"Tempest Keep",High Astromancer Solarian,1634153131,-104
 Xaia,"Pauldrons of the Vanquished Defender",30249,"Tempest Keep",High Astromancer Solarian,1634153107,-104
 Ophelius,"Pendant of the Lost Ages",30008,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1633892426,-20
-Krocket,"Bloodsea Brigand's Vest",30101,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1633892400,-20
-Ophelius,"Leggings of the Vanquished Champion",30245,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1633892338,-20
-Luremistress,"Nether Vortex",30183,"Magtheridon's Lair",Magtheridon,1633889577,-100
