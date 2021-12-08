@@ -1,4 +1,32 @@
 player,itemName,itemNumber,zone,boss,date,cost
+Geratotem,"Sextant of Unstable Currents",30626,"Coilfang: Serpentshrine Cavern",Fathom-Lord Karathress,1639001184,0
+Luremistress,"Helm of the Vanquished Hero",30244,"Coilfang: Serpentshrine Cavern",Lady Vashj,1639001081,0
+Primera,"Helm of the Vanquished Champion",30242,"Coilfang: Serpentshrine Cavern",Lady Vashj,1639001014,0
+Loriell,"Vestments of the Sea-Witch",30107,"Coilfang: Serpentshrine Cavern",Lady Vashj,1639000959,-105
+Divinekaine,"Prism of Inner Calm",30621,"Coilfang: Serpentshrine Cavern",Lady Vashj,1639000932,0
+Krocket,"Coral-Barbed Shoulderpads",30097,"Coilfang: Serpentshrine Cavern",Fathom-Lord Karathress,1638999408,0
+Primera,"Gloves of the Vanquished Champion",30239,"Coilfang: Serpentshrine Cavern",Fathom-Lord Karathress,1638999271,0
+Fluffers,"Leggings of the Vanquished Defender",30246,"Coilfang: Serpentshrine Cavern",Fathom-Lord Karathress,1638999204,0
+Lewera,"Leggings of the Vanquished Defender",30246,"Coilfang: Serpentshrine Cavern",Fathom-Lord Karathress,1638999016,-20
+Moraira,"Nether Vortex",30183,"Coilfang: Serpentshrine Cavern",Leotheras the Blind,1638998701,0
+Lewera,"Wildfury Greatstaff",30021,"Coilfang: Serpentshrine Cavern",The Lurker Below,1638998080,-20
+Velvet,"Pattern: Boots of the Long Road",30283,"Coilfang: Serpentshrine Cavern",The Lurker Below,1638997325,0
+Lewera,"Ancestral Ring of Conquest",30061,"Coilfang: Serpentshrine Cavern",The Lurker Below,1638996955,0
+Luremistress,"Velvet Boots of the Guardian",30067,"Coilfang: Serpentshrine Cavern",The Lurker Below,1638996911,-104
+Kenpachina,"Robe of Hateful Echoes",30056,"Coilfang: Serpentshrine Cavern",The Lurker Below,1638996846,0
+Gnomorah,"Band of the Ranger-General",29997,"Tempest Keep",Kael'thas Sunstrider,1638994549,-105
+Bazookatonyx,"Sunshower Light Cloak",29989,"Tempest Keep",Kael'thas Sunstrider,1638994522,-20
+Loriell,"Chestguard of the Vanquished Hero",30238,"Tempest Keep",Kael'thas Sunstrider,1638994494,0
+Wico,"Chestguard of the Vanquished Champion",30236,"Tempest Keep",Kael'thas Sunstrider,1638994470,0
+Fluffers,"Nether Vortex",30183,"Tempest Keep",Kael'thas Sunstrider,1638994430,0
+Wico,"Verdant Sphere",32405,"Tempest Keep",Kael'thas Sunstrider,1638994405,-105
+Divinekaine,"Wristguards of Determination",32515,"Tempest Keep",High Astromancer Solarian,1638992751,0
+Bazookatonyx,"Trousers of the Astromancer",29972,"Tempest Keep",High Astromancer Solarian,1638992715,0
+Xaia,"Greaves of the Bloodwarder",29950,"Tempest Keep",High Astromancer Solarian,1638992685,0
+Alexiz,"Nether Vortex",30183,"Tempest Keep",Void Reaver,1638991717,0
+Lewera,"Pauldrons of the Vanquished Defender",30249,"Tempest Keep",Void Reaver,1638991282,0
+Loriell,"Pauldrons of the Vanquished Hero",30250,"Tempest Keep",Void Reaver,1638991047,0
+Krocket,"Talon of the Phoenix",32944,"Tempest Keep",Al'ar,1638989972,-20
 Geratotem,"Crown of the Sun",29990,"Tempest Keep",Kael'thas Sunstrider,1638734400,0
 Phorus,"Twinblade of the Phoenix",29993,"Tempest Keep",Kael'thas Sunstrider,1638734366,0
 Krocket,"Chestguard of the Vanquished Champion",30236,"Tempest Keep",Kael'thas Sunstrider,1638734269,-101
@@ -155,35 +183,3 @@ Fluffers,"Sunshower Light Cloak",29989,"Tempest Keep",Kael'thas Sunstrider,16357
 Primera,"Rod of the Sun King",29996,"Tempest Keep",Kael'thas Sunstrider,1635714567,-105
 Nejt,"Verdant Sphere",32405,"Tempest Keep",Kael'thas Sunstrider,1635714531,-105
 Xaia,"Chestguard of the Vanquished Defender",30237,"Tempest Keep",Kael'thas Sunstrider,1635714487,-104
-Phorus,"Chestguard of the Vanquished Defender",30237,"Tempest Keep",Kael'thas Sunstrider,1635714471,-105
-Honteryx,"Cloak of the Pit Stalker",28777,"Magtheridon's Lair",Magtheridon,1635707214,0
-Keyan,"Eredar Wand of Obliteration",28783,"Magtheridon's Lair",Magtheridon,1635707177,0
-Wichtel,"Chestguard of the Fallen Hero",29755,"Magtheridon's Lair",Magtheridon,1635707144,0
-Bazookatonyx,"Magtheridon's Head",32385,"Magtheridon's Lair",Magtheridon,1635707102,0
-Noemichen,"Chestguard of the Fallen Champion",29754,"Magtheridon's Lair",Magtheridon,1635707060,0
-Phorus,"Aldori Legacy Defender",28825,"Gruul's Lair",Gruul the Dragonkiller,1635705708,0
-Bazookatonyx,"Teeth of Gruul",28822,"Gruul's Lair",Gruul the Dragonkiller,1635705676,0
-Phorus,"Leggings of the Fallen Defender",29767,"Gruul's Lair",Gruul the Dragonkiller,1635705649,0
-Keyan,"Brute Cloak of the Ogre-Magi",28797,"Gruul's Lair",High King Maulgar,1635705361,0
-Ciira,"Pauldrons of the Fallen Hero",29762,"Gruul's Lair",High King Maulgar,1635705218,0
-Designflawz,"Heartrazor",29962,"Tempest Keep",High Astromancer Solarian,1635368624,0
-Fluffers,"Ethereum Life-Staff",29981,"Tempest Keep",High Astromancer Solarian,1635368587,0
-Prime,"Seventh Ring of the Tirisfalen",30028,"Tempest Keep",High Astromancer Solarian,1635368526,0
-Honteryx,"Bands of the Celestial Archer",30026,"Tempest Keep",High Astromancer Solarian,1635368481,-20
-Elva,"Cowl of the Grand Engineer",29986,"Tempest Keep",High Astromancer Solarian,1635368440,0
-Bazookatonyx,"Pauldrons of the Vanquished Defender",30249,"Tempest Keep",High Astromancer Solarian,1635368346,-105
-Honteryx,"Pauldrons of the Vanquished Hero",30250,"Tempest Keep",High Astromancer Solarian,1635368297,-10
-Krocket,"Netherbane",29924,"Tempest Keep",High Astromancer Solarian,1635368251,0
-Furiorne,"Spyglass of the Hidden Fleet",30620,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635363474,0
-Bazookatonyx,"Illidari Shoulderpads",30079,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635363346,0
-Loriell,"Fathomstone",30049,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635363282,0
-Fluffers,"Grove-Bands of Remulos",30062,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635363236,0
-Incubus,"Pattern: Boots of Blasting",30282,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635363190,-101
-Ophelius,"Scarab of Displacement",30629,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635363143,0
-Healna,"Wildfury Greatstaff",30021,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635363100,0
-Bazookatonyx,"Gloves of the Vanquished Defender",30240,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635362998,0
-Fluffers,"Gloves of the Vanquished Defender",30240,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635362982,0
-Keyan,"Leggings of the Vanquished Hero",30247,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635362883,-100
-Noemichen,"Leggings of the Vanquished Champion",30245,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635362809,-105
-Wichtel,"Fang of the Leviathan",30095,"Coilfang: Serpentshrine Cavern",Morogrim Tidewalker,1635362760,-105
-Phorus,"Serpentshrine Shuriken",30025,"Coilfang: Serpentshrine Cavern",Fathom-Lord Karathress,1635362319,0
