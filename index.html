@@ -208,7 +208,7 @@
   // https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pubhtml?gid=1567231630&single=true
 
   $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=csv", function (data) {
-    consoloe.log(csvJSON(data));
+    console.log(csvJSON(data));
   });
 
 
@@ -316,7 +316,7 @@
       { title: "Class", field: "class", formatter: class_formatter },
       { title: "DKP", field: "DKP", width: 110 },
       { title: "Spent", field: "lifetimeSpent", width: 110 },
-      { title: "BenchTime", field: "benchtime", width: 110 },
+      { title: "BenchTime", field: "benchtime", width: 150 },
     ]
   });
 
