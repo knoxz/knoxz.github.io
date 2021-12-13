@@ -205,11 +205,6 @@
   //var csv is the CSV file with headers
   openTab('DKP');
 
-  // https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pubhtml?gid=1567231630&single=true
-
-
-
-
 
   function csvJSON(csv) {
 
@@ -413,7 +408,9 @@
   $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=csv", function (data) {
     data = "Name,Class,BenchTime,null,null,null,null\n" + data;
     bench_array = csvJSON(data);
-
+    console.log("Bench Function");
+    debugger;
+    console.log(bench_array);
     dkp_data = dkp_table.getData();
     bench_array.forEach(player => {
       dkp_data.forEach(dkp_data_player => {
@@ -422,7 +419,8 @@
         }
       });
     });
-    dkp_data = dkp_table.setData(dkp_data);
+    console.log(dkp_data);
+    dkp_table.setData(dkp_data);
   });
 
 </script>
