@@ -207,8 +207,8 @@
 
   // https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pubhtml?gid=1567231630&single=true
 
-  $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=csv", function (data, status) {
-    alert("Data: " + data + "\nStatus: " + status);
+  $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=csv", function (data) {
+    consoloe.log(csvJSON(data));
   });
 
 
