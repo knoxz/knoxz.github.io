@@ -406,7 +406,7 @@
   });
 
   $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=csv", function (data) {
-    data = "Name,Class,BenchTime,null,null,null,null\n" + data;
+    data = "name,class,benchtime,null,null,null,null\n" + data;
     bench_array = csvJSON(data);
     console.log("Bench Function");
     debugger;
@@ -414,8 +414,8 @@
     dkp_data = dkp_table.getData();
     bench_array.forEach(player => {
       dkp_data.forEach(dkp_data_player => {
-        if (player["Name"] == dkp_data_player["Player"]) {
-          dkp_data_player["BenchTime"] = player["BenchTime"];
+        if (player["name"] == dkp_data_player["player"]) {
+          dkp_data_player["benchtime"] = player["benchtime"];
         }
       });
     });
