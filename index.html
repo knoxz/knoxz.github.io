@@ -22,6 +22,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.9.3/css/bootstrap/tabulator_bootstrap4.min.css"
     integrity="sha512-pXZ8FsuOBAyDmJ3OWob4V2UgZWQ8zs8f99MrNv0sBG8VLzuucajpzJ3BIiVNzTpfIYgzWGUq0QPJ3Y/9Gr4h7Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
   <script>var whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: true };</script>
 </head>
 
@@ -59,6 +61,14 @@
         </li>
         <li class="nav-item menu-items">
           <a class="nav-link" href="#" onclick="openTab('LootHistory');return false;">
+            <span class="menu-icon">
+              <i class="mdi mdi-table-large"></i>
+            </span>
+            <span class="menu-title">Loot History</span>
+          </a>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="#" onclick="openTab('Bench');return false;">
             <span class="menu-icon">
               <i class="mdi mdi-table-large"></i>
             </span>
@@ -105,15 +115,21 @@
                     </div>
                   </div>
                   <div id="DKPHistory" class="tab">
-                    <h4 class="card-title">DKP List</h4>
+                    <h4 class="card-title">DKP History</h4>
                     <div class="table-responsive">
                       <div class="table-dark" id="DKPHistory_table"></div>
                     </div>
                   </div>
                   <div id="LootHistory" class="tab">
-                    <h4 class="card-title">DKP List</h4>
+                    <h4 class="card-title">Loot History</h4>
                     <div class="table-responsive">
                       <div class="table-dark" id="LootHistory_table"></div>
+                    </div>
+                  </div>
+                  <div id="Bench" class="tab">
+                    <h4 class="card-title">Bench History</h4>
+                    <div class="table-responsive">
+                      <div class="table-dark" id="BenchHistory_table"></div>
                     </div>
                   </div>
                   <div id="Crafter" class="tab">
@@ -188,6 +204,15 @@
   }
   //var csv is the CSV file with headers
   openTab('DKP');
+
+  // https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pubhtml?gid=1567231630&single=true
+
+  $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=csv", function (data, status) {
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+
+
+
   function csvJSON(csv) {
 
     var lines = csv.split("\n");
