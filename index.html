@@ -207,10 +207,7 @@
 
   // https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pubhtml?gid=1567231630&single=true
 
-  $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=csv", function (data) {
-    data = "Name,Class,Bench,null,null,null,null\n" + data;
-    console.log(csvJSON(data));
-  });
+
 
 
 
@@ -411,6 +408,21 @@
       },
       // { title: "Profession", field: "profession" },
     ]
+  });
+
+  $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=csv", function (data) {
+    data = "Name,Class,BenchTime,null,null,null,null\n" + data;
+    bench_array = csvJSON(data);
+
+    dkp_data = dkp_table.getData();
+    bench_array.forEach(player => {
+      dkp_data.forEach(dkp_data_player => {
+        if (player["Name"] == dkp_data_player["Player"]) {
+          dkp_data_player["BenchTime"] = player["BenchTime"];
+        }
+      });
+    });
+    dkp_data = dkp_table.setData(dkp_data);
   });
 
 </script>
