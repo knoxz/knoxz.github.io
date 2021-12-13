@@ -207,7 +207,7 @@
 
   // https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pubhtml?gid=1567231630&single=true
 
-  $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=json", function (data) {
+  $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHfrzDCNtlpSqy5XYfeAlT2KvQ8acO3hD5O2l3j1CFmLjbcbfcd1DZcPWUrnHCzbpdjiVMS9S48MZj/pub?gid=1567231630&single=true&output=csv", function (data) {
     data = "Name,Class,Bench,null,null,null,null\n" + data;
     console.log(csvJSON(data));
   });
